@@ -1,26 +1,157 @@
-@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f3f5f2;
+  color: #26352f;
+  font-family: Arial, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.home {
+  width: 100%;
+  max-width: 620px;
+  margin: 65px auto;
+  padding: 0 20px;
+}
+
+.top {
+  background: #284b3f;
+  color: white;
+  padding: 30px;
+  border-radius: 12px 12px 0 0;
+}
+
+.small-title {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.top h1 {
+  margin: 12px 0;
+  font-size: 34px;
+}
+
+.top p:last-child {
+  color: #d4e1da;
+  font-size: 14px;
+}
+
+.todo-box {
+  background: white;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 25px #26352f0d;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  padding: 15px 22px;
+  border-bottom: 1px solid #e7ebe7;
+}
+
+.tabs button {
+  border: none;
+  background: transparent;
+  color: #65736c;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.tabs button.active {
+  background: #e5eee8;
+  color: #284b3f;
+  font-weight: bold;
+}
+
+.content {
+  min-height: 190px;
+  padding: 25px;
+}
+
+.content h2 {
+  font-size: 19px;
+  margin: 0 0 20px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.task-form label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.task-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d5ddd7;
+  border-radius: 6px;
+  outline-color: #527a66;
+}
+
+.task-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #284b3f;
+  color: white;
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #edf0ed;
+  overflow-wrap: anywhere;
+}
+
+.task-number {
+  color: #64806e;
+  font-size: 12px;
+}
+
+.empty {
+  color: #7c8981;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  color: #7c8981;
+  font-size: 12px;
+  padding: 20px;
+}
+
+@media (max-width: 480px) {
+  .home {
+    margin: 25px auto;
+  }
+
+  .top {
+    padding: 23px;
+  }
+
+  .content {
+    padding: 20px;
+  }
 }
